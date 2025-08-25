@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K. Veerendra Kumar — Portfolio</title>
+  <style>
+    /* ========= CSS RESET ========= */
+    *,*::before,*::after { box-sizing: border-box; }
+    html:focus-within { scroll-behavior: smooth; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+    }
+    /* ========= THEME ========= */
+    :root {
+      --bg: #0b0d12; --panel: #10131a; --panel-2: #0f1420;
+      --text: #e6e9ef; --muted: #a0a7b4;
+      --brand: #6aa6ff; --brand-2: #86efac; --accent: #ffd166;
+      --border: #1c2230; --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    :root.light {
+      --bg: #f7f8fb; --panel: #fff; --panel-2: #f2f4f8;
+      --text: #0f172a; --muted: #4b5563;
+      --brand: #2563eb; --brand-2: #16a34a; --accent: #b45309;
+      --border: #e5e7eb; --shadow: 0 10px 30px rgba(2,6,23,.08);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+    /* ========= UTILITIES ========= */
+    .container { width: min(1100px, 92%); margin-inline: auto; }
+    .section { padding: clamp(3rem, 7vw, 6rem) 0; }
+    .section-title { font-size: clamp(1.5rem, 1.1rem + 2vw, 2.1rem); margin-bottom: 1rem; }
+    .card {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border); border-radius: 16px;
+      padding: 1rem; box-shadow: var(--shadow);
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 999px; padding: .6rem 1rem;
+      background: var(--brand); color: white; font-weight: 600;
+      border: 1px solid transparent; text-decoration: none;
+    }
+    .btn--ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .tag {
+      display: inline-block; padding: .35rem .7rem; margin: .2rem;
+      border-radius: 999px; background: var(--panel-2); border: 1px solid var(--border);
+    }
+    /* ========= HEADER ========= */
+    .site-header { position: sticky; top: 0; background: var(--panel); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; padding: .8rem; }
+    .brand { font-weight: 700; text-decoration: none; color: var(--text); }
+    .site-nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+    .site-nav a { text-decoration: none; color: var(--text); }
+    /* ========= HERO ========= */
+    .hero { text-align: center; padding-top: 4rem; }
+    .headline { font-size: 2.5rem; margin: 0 0 .5rem; }
+    .accent { color: var(--brand-2); }
+    .subhead { color: var(--muted); max-width: 600px; margin: auto; }
+    .avatar { width: 180px; border-radius: 50%; margin-top: 1.5rem; border: 2px solid var(--border); }
+    /* ========= REVEAL ========= */
+    .reveal { opacity: 0; transform: translateY(15px); transition: .6s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    /* ========= FOOTER ========= */
+    footer { text-align: center; padding: 1rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="#hero">K. Veerendra Kumar</a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="btn--ghost">🌙</button>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <h1 class="headline">Hi, I’m <span class="accent">Veerendra</span> 👋</h1>
+    <p class="subhead">B.Tech CSE (Data Science) student passionate about SQL, IoT, and Problem Solving.</p>
+    <img src="profile.jpg" alt="Profile picture" class="avatar" />
+    <div style="margin-top:1rem;">
+      <a href="#contact" class="btn">Contact Me</a>
+      <a href="resume.pdf" class="btn--ghost" download>Download Resume</a>
+    </div>
+  </section>
+
+  <section id="about" class="section container reveal">
+    <h2 class="section-title">About Me</h2>
+    <p>I am a Data Science enthusiast who loves solving logical problems, building IoT projects, and analyzing data using SQL.</p>
+  </section>
+
+  <section id="skills" class="section container reveal">
+    <h2 class="section-title">Skills</h2>
+    <div>
+      <span class="tag">SQL</span>
+      <span class="tag">IoT</span>
+      <span class="tag">Problem Solving</span>
+      <span class="tag">Python</span>
+      <span class="tag">Machine Learning</span>
+    </div>
+  </section>
+
+  <section id="education" class="section container reveal">
+    <h2 class="section-title">Education</h2>
+    <div class="card">
+      <h3>St. John’s College of Engineering & Technology</h3>
+      <p>B.Tech in CSE (Data Science Specialisation)</p>
+    </div>
+  </section>
+
+  <section id="hobbies" class="section container reveal">
+    <h2 class="section-title">Hobbies</h2>
+    <div>
+      <span class="tag">Cooking Food</span>
+      <span class="tag">Solving Logical Problems</span>
+      <span class="tag">Reading Tech Articles</span>
+    </div>
+  </section>
+
+  <section id="contact" class="section container reveal">
+    <h2 class="section-title">Contact</h2>
+    <p>Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/veerendra</a></p>
+    <p>GitHub: <a href="#">github.com/veerendra</a></p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Veerendra Kumar</p>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const toggle = document.getElementById("theme-toggle");
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("light");
+      toggle.textContent = document.documentElement.classList.contains("light") ? "🌞" : "🌙";
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add("is-visible"); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+
+    // Year update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
